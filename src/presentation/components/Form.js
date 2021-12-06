@@ -6,6 +6,7 @@ export { FormTextArea } from "./FormTextArea";
 export { FormFileInput } from "./FormFileInput";
 
 let FormField = ["FormInput", "FormTextArea", "FormFileInput"];
+
 export const Form = ({ children, onSubmitFormData }) => {
   const { register, handleSubmit } = useForm();
 
@@ -14,7 +15,7 @@ export const Form = ({ children, onSubmitFormData }) => {
     if (FormField.includes(child.type.name)) {
       return React.cloneElement(child, {
         key: child.props.name,
-        register: () => ({ ...register(child.props.name, child.props.rules) }),
+        ...register(child.props.name, child.props.rules),
       });
     } else {
       return React.cloneElement(child, {});
@@ -23,10 +24,9 @@ export const Form = ({ children, onSubmitFormData }) => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => {
-        onSubmitFormData(data);
-        console.log("data", data);
-      })}
+      onSubmit={() => {
+        onSubmitFormData();
+      }}
       className=" grid grid-col-1 place-items-center space-y-4  w-full"
     >
       {React.Children.map(children, (child) => RegisterFields(child))}
