@@ -7,7 +7,7 @@ export { FormFileInput } from "./FormFileInput";
 
 let FormField = ["FormInput", "FormTextArea", "FormFileInput"];
 
-export const Form = ({ children, onSubmitFormData }) => {
+export const Form = ({ children }) => {
   const { register, handleSubmit } = useForm();
 
   const RegisterFields = (child) => {
@@ -25,7 +25,7 @@ export const Form = ({ children, onSubmitFormData }) => {
   return (
     <form
       onSubmit={() => {
-        onSubmitFormData();
+        handleSubmit();
       }}
       className=" grid grid-col-1 place-items-center space-y-4  w-full"
     >

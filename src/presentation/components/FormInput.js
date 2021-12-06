@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 export const FormInput = (props) => {
   const { label, type, placeholder } = props;

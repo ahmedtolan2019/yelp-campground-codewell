@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "./../components/Button";
-import { Form, FormInput } from "./../components/Form";
+// import { Form, FormInput } from "./../components/Form";
 import { Link } from "react-router-dom";
 
 import { useFireAuthContext } from "../../application/firebase/useAuth";
