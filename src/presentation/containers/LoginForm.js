@@ -45,7 +45,7 @@ export const LoginForm = () => {
 
         <Button text="Login" />
         <p className="w-full text-gray-700">
-          Not a user yet?{" "}
+          Not a user yet?
           <Link
             to="/credentials/signup"
             className="underline text-blue-400 font-bold"

@@ -47,28 +47,10 @@ export const SignupForm = () => {
           placeholder="password"
           rules={{ required: true }}
         />
-        {/* <FormInput
-        label="Repeat Password"
-        type="password"
-        name="repeatpassword"
-        placeholder="Repeat Password"
-        rules={{
-          required: "Please confirm password",
-          validate: {
-            matchesPreviousPassword: (value) => {
-              const currentPassword = passwordValue;
-              return (
-                currentPassword === value ||
-                console.log("Passwords should match!")
-              );
-            },
-          },
-        }}
-      /> */}
 
         <Button text="Create an account" />
         <p className="w-full text-gray-700">
-          Already a user?{" "}
+          Already a user?
           <Link
             to="/credentials/login"
             className="underline text-blue-400 font-bold"
