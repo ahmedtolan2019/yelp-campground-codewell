@@ -1,5 +1,5 @@
 import React from "react";
-import { SearchCard, CampgroundsGrid, Footer } from "../containers/Index";
+import { SearchCard, CampgroundsGrid } from "../containers/Index";
 import { Padding } from "../components/Padding";
 export const Campgrounds = () => {
   return (

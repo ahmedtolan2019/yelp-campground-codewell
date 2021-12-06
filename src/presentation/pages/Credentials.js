@@ -1,10 +1,14 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Navigate, Outlet } from "react-router-dom";
 import { Testmonial } from "./../components/Testmonial";
 import { Padding } from "./../components/Padding";
 import { HeadingText } from "./../components/HeadingText";
+import { useFireAuthContext } from "../../application/firebase/useAuth";
 
 export const Credentials = () => {
+  const { isAuth } = useFireAuthContext();
+  if (isAuth) return <Navigate to="/campgrounds" replace={true} />;
+
   return (
     <>
       <Padding>

@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Button,
-  FullCampgroundCard,
-  CampgroundCard,
-} from "../components/Index";
+import { Button, FullCampgroundCard } from "../components/Index";
 import { ReviewGrid } from "../containers/Index";
 import { Padding } from "./../components/Padding";
 import { useNavigate } from "react-router-dom";

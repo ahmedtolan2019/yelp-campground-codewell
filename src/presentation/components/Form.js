@@ -6,12 +6,11 @@ export { FormTextArea } from "./FormTextArea";
 export { FormFileInput } from "./FormFileInput";
 
 let FormField = ["FormInput", "FormTextArea", "FormFileInput"];
-export const Form = ({ children, getPasswordValue }) => {
-  console.log("render");
+export const Form = ({ children, onSubmitFormData }) => {
   const { register, handleSubmit } = useForm();
 
   const RegisterFields = (child) => {
-    console.log(child.type.name); //return the name of function of child
+    //return the name of function of child
     if (FormField.includes(child.type.name)) {
       return React.cloneElement(child, {
         key: child.props.name,
@@ -25,7 +24,7 @@ export const Form = ({ children, getPasswordValue }) => {
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        console.log(data);
+        onSubmitFormData(data);
       })}
       className=" grid grid-col-1 place-items-center space-y-4  w-full"
     >

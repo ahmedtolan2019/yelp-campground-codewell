@@ -10,7 +10,7 @@ export const PartenersFooter = () => {
       <div className="flex justify-between">
         <img src={Airbnb} alt="Airbnb" />
         <img src={Booking} alt="Booking" />
-        <img src={PlumGuide} alt="" srcset="" />
+        <img src={PlumGuide} alt="PlumGuide" />
       </div>
     </div>
   );

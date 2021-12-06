@@ -5,16 +5,22 @@ import { NewsHeader } from "./../components/NewsHeader";
 import { Menu } from "./Menu";
 import { BackTo } from "./../components/BackTo";
 import { Padding } from "./../components/Padding";
-import { useHref, useLocation } from "react-router";
+import { useLocation } from "react-router";
 import { useNavigate } from "react-router-dom";
 import { Transition } from "@headlessui/react";
+import { useFireAuthContext } from "../../application/firebase/useAuth";
 
 export const Header = () => {
+  const { isAuth, user, signUserOut } = useFireAuthContext();
   const { pathname } = useLocation();
-  console.log(pathname);
+
   const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const handleSignOut = () => {
+    signUserOut();
+    navigate("/campgrounds");
+  };
   return (
     <div className="w-full  flex flex-col">
       <NewsHeader />
@@ -37,13 +43,15 @@ export const Header = () => {
       </Padding>
       {/* {menuOpen && <Menu handleClick={() => setMenuOpen(false)} />} */}
       <Transition
-        className="transform origin-top  overflow-hidden"
+        className="transform origin-top overflow-hidden"
         show={menuOpen}
-        enter="transition easy-out duration-150"
-        enterFrom=" transform opacity-0 scale-y-0"
-        enterTo="transform opacity-100 scale-y-100"
       >
-        <Menu handleClick={() => setMenuOpen(false)} />
+        <Menu
+          handleClick={() => setMenuOpen(false)}
+          isAuth={isAuth}
+          userName={user?.email}
+          handleSignOut={handleSignOut}
+        />
       </Transition>
     </div>
   );

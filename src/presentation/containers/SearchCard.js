@@ -23,7 +23,6 @@ export const SearchCard = () => {
       <Button
         text="Search"
         handleClick={() => {
-          console.log(serchRef.current.value);
           serchRef.current.value = "";
         }}
       />

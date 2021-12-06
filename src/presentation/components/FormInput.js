@@ -8,7 +8,6 @@ export const FormInput = ({
   register,
   rules,
 }) => {
-  console.log("render");
   return (
     <div className="flex w-full flex-col gap-y-3 text-gray-600">
       <label htmlFor={placeholder}>{label}</label>

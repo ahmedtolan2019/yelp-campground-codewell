@@ -1,7 +1,4 @@
-import React, { useRef } from "react";
-
 export const Search = ({ serchRef }) => {
-  console.log("render");
   return (
     <div className="relative flex w-full flex-wrap items-stretch mb-3">
       <span className=" z-10 h-full leading-normal font-norma text-center text-gray-400 absolute bg-transparent rounded text-lg items-center justify-center w-8 pl-3 py-4">
