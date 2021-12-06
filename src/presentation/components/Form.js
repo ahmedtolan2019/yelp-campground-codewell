@@ -14,7 +14,7 @@ export const Form = ({ children, onSubmitFormData }) => {
     if (FormField.includes(child.type.name)) {
       return React.cloneElement(child, {
         key: child.props.name,
-        register: register,
+        register: () => ({ ...register(child.props.name, child.props.rules) }),
       });
     } else {
       return React.cloneElement(child, {});
@@ -25,6 +25,7 @@ export const Form = ({ children, onSubmitFormData }) => {
     <form
       onSubmit={handleSubmit((data) => {
         onSubmitFormData(data);
+        console.log("data", data);
       })}
       className=" grid grid-col-1 place-items-center space-y-4  w-full"
     >
